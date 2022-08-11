@@ -1,6 +1,5 @@
 import java.util.*;
 
-import javax.security.auth.kerberos.KerberosCredMessage;
 
 
 public class arrays {
@@ -80,30 +79,56 @@ public class arrays {
 
         // ascending order
 
-        int size = s.nextInt();
-        int n[] = new int[size];
+        // int size = s.nextInt();
+        // int n[] = new int[size];
         
+        // //input
+        // for(int i = 0; i<size; i++){
+        //     n[i] = s.nextInt();
+        // }
+
+
+        // boolean isAscending = true;
+
+        // for(int i = 0; i<n.length-1; i++){
+        //     if(n[i] > n[i+1]){
+        //         isAscending = false;
+        //     }
+        // }
+
+        // if(isAscending){
+        //     System.out.println("ascending");
+        // } else {
+        //     System.out.println("not sorted");
+        // }
+
+        
+
+
+        // 2D ARRAY
+
+        int rows = s.nextInt();
+        int cols = s.nextInt();
+
+        int [][] n = new int[rows][cols];
+
         //input
-        for(int i = 0; i<size; i++){
-            n[i] = s.nextInt();
-        }
-
-
-        boolean isAscending = true;
-
-        for(int i = 0; i<n.length-1; i++){
-            if(n[i] > n[i+1]){
-                isAscending = false;
+        //rows
+        for(int i = 0; i<rows; i++){
+            //cols
+            for(int j = 0; j<cols; j++){
+                n[i][j] = s.nextInt();
             }
         }
 
-        if(isAscending){
-            System.out.println("ascending");
-        } else {
-            System.out.println("not sorted");
-        }
+        // output
 
-        
+        for(int i = 0; i<rows; i++){
+            for(int j = 0; j<cols; j++){
+                System.out.print(n[i][j] + " ");
+            }
+            System.out.println();
+        }
 
 
         s.close();
