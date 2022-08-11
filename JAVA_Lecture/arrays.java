@@ -132,40 +132,55 @@ public class arrays {
 
         //search an element x
 
-            int rows = s.nextInt();
-            int cols = s.nextInt();
+            // int rows = s.nextInt();
+            // int cols = s.nextInt();
 
-            int[][] n = new int[rows][cols];
+            // int[][] n = new int[rows][cols];
 
-            //input
-            //rows
-            for(int i = 0; i<rows; i++){
-                //cols
-                for(int j = 0; j<cols; j++){
-                    n[i][j] = s.nextInt();
-                }
-            }
-
-            int x = s.nextInt();
-
+            // //input
+            // //rows
             // for(int i = 0; i<rows; i++){
+            //     //cols
             //     for(int j = 0; j<cols; j++){
+            //         n[i][j] = s.nextInt();
+            //     }
+            // }
+
+            // int x = s.nextInt();
+
+
+            // for(int i=0; i<rows; i++) {
+            //     for(int j=0; j<cols; j++) {
             //         //compare with x
-            //         if ( [i][j] == x){
-            //             // System.out.println("location" + i + ", " + j);
+            //         if(n[i][j] == x) {
             //             System.out.println("x found at location (" + i + ", " + j + ")");
             //         }
             //     }
             // }
 
-            for(int i=0; i<rows; i++) {
-                for(int j=0; j<cols; j++) {
-                    //compare with x
-                    if(n[i][j] == x) {
-                        System.out.println("x found at location (" + i + ", " + j + ")");
-                    }
-                }
-            }
+
+
+            //Transpose
+
+            int n = s.nextInt();
+      int m = s.nextInt();
+ 
+      int matrix[][] = new int[n][m];
+      for(int i=0; i<n; i++) {
+           for(int j=0; j<m; j++) {
+               matrix[i][j] = s.nextInt();
+           }
+      }
+ 
+      System.out.println("The transpose is : ");
+      //To print transpose
+      for(int j=0; j<m ;j++) {
+          for(int i=0; i<n; i++) {
+              System.out.print(matrix[i][j]+" ");
+          }
+          System.out.println();
+      }
+
 
         s.close();
     }
