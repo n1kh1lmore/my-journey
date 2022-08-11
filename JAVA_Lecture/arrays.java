@@ -1,5 +1,7 @@
 import java.util.*;
 
+import javax.security.auth.kerberos.KerberosCredMessage;
+
 
 public class arrays {
 
@@ -51,30 +53,56 @@ public class arrays {
         //maxmin number from array 
         // Integer.MIN_VALUE & Integer.MAX_VALUE
 
+        // int size = s.nextInt();
+        // int n[] = new int[size];
+
+
+        // // input
+        // for(int i = 0; i<size; i++){
+        //     n[i] = s.nextInt();
+        // }
+
+        // int max = Integer.MIN_VALUE;
+        // int min = Integer.MAX_VALUE;
+
+
+        // for(int i = 0; i<n.length; i++){
+        //     if(n[i] < min){
+        //         min = n[i];
+        //     }
+        //     if(n[i] > max){
+        //         max = n[i];
+        //     }
+        // }
+
+        // System.out.println(max);
+        // System.out.println(min);
+
+        // ascending order
+
         int size = s.nextInt();
         int n[] = new int[size];
-
-
-        // input
+        
+        //input
         for(int i = 0; i<size; i++){
             n[i] = s.nextInt();
         }
 
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
 
+        boolean isAscending = true;
 
-        for(int i = 0; i<n.length; i++){
-            if(n[i] < min){
-                min = n[i];
-            }
-            if(n[i] > max){
-                max = n[i];
+        for(int i = 0; i<n.length-1; i++){
+            if(n[i] > n[i+1]){
+                isAscending = false;
             }
         }
 
-        System.out.println(max);
-        System.out.println(min);
+        if(isAscending){
+            System.out.println("ascending");
+        } else {
+            System.out.println("not sorted");
+        }
+
         
 
 
