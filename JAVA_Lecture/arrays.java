@@ -171,6 +171,15 @@ public class arrays {
                matrix[i][j] = s.nextInt();
            }
       }
+
+      System.out.println("given");
+      
+      for(int i=0; i<n; i++) {
+            for(int j=0; j<m ;j++) {
+            System.out.print(matrix[i][j]+" ");
+        }
+        System.out.println();
+    }
  
       System.out.println("The transpose is : ");
       //To print transpose
