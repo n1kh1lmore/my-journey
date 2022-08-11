@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 public class arrays {
 
     public static void main(String args[]) {
@@ -33,19 +34,49 @@ public class arrays {
 
         // array of names and printing
 
+        // int size = s.nextInt();
+        // String names[] = new String[size];
+
+        // //input
+        // for(int i=0; i<size; i++){
+        //     names[i] = s.next();
+
+        // }
+        // //output
+        // for(int i=0; i<names.length; i++){
+        //     // System.out.println((i+1) + names[i]);
+        //     System.out.println("name " + (i+1) +" is : " + names[i]);
+        // }
+
+        //maxmin number from array 
+        // Integer.MIN_VALUE & Integer.MAX_VALUE
+
         int size = s.nextInt();
-        String names[] = new String[size];
+        int n[] = new int[size];
 
-        //input
-        for(int i=0; i<size; i++){
-            names[i] = s.next();
 
+        // input
+        for(int i = 0; i<size; i++){
+            n[i] = s.nextInt();
         }
-        //output
-        for(int i=0; i<names.length; i++){
-            // System.out.println((i+1) + names[i]);
-            System.out.println("name " + (i+1) +" is : " + names[i]);
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+
+        for(int i = 0; i<n.length; i++){
+            if(n[i] < min){
+                min = n[i];
+            }
+            if(n[i] > max){
+                max = n[i];
+            }
         }
+
+        System.out.println(max);
+        System.out.println(min);
+        
+
 
         s.close();
     }
