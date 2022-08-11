@@ -107,29 +107,65 @@ public class arrays {
 
         // 2D ARRAY
 
-        int rows = s.nextInt();
-        int cols = s.nextInt();
+        // int rows = s.nextInt();
+        // int cols = s.nextInt();
 
-        int [][] n = new int[rows][cols];
+        // int [][] n = new int[rows][cols];
 
-        //input
-        //rows
-        for(int i = 0; i<rows; i++){
-            //cols
-            for(int j = 0; j<cols; j++){
-                n[i][j] = s.nextInt();
+        // //input
+        // //rows
+        // for(int i = 0; i<rows; i++){
+        //     //cols
+        //     for(int j = 0; j<cols; j++){
+        //         n[i][j] = s.nextInt();
+        //     }
+        // }
+
+        // // output
+
+        // for(int i = 0; i<rows; i++){
+        //     for(int j = 0; j<cols; j++){
+        //         System.out.print(n[i][j] + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+        //search an element x
+
+            int rows = s.nextInt();
+            int cols = s.nextInt();
+
+            int[][] n = new int[rows][cols];
+
+            //input
+            //rows
+            for(int i = 0; i<rows; i++){
+                //cols
+                for(int j = 0; j<cols; j++){
+                    n[i][j] = s.nextInt();
+                }
             }
-        }
 
-        // output
+            int x = s.nextInt();
 
-        for(int i = 0; i<rows; i++){
-            for(int j = 0; j<cols; j++){
-                System.out.print(n[i][j] + " ");
+            // for(int i = 0; i<rows; i++){
+            //     for(int j = 0; j<cols; j++){
+            //         //compare with x
+            //         if ( [i][j] == x){
+            //             // System.out.println("location" + i + ", " + j);
+            //             System.out.println("x found at location (" + i + ", " + j + ")");
+            //         }
+            //     }
+            // }
+
+            for(int i=0; i<rows; i++) {
+                for(int j=0; j<cols; j++) {
+                    //compare with x
+                    if(n[i][j] == x) {
+                        System.out.println("x found at location (" + i + ", " + j + ")");
+                    }
+                }
             }
-            System.out.println();
-        }
-
 
         s.close();
     }
