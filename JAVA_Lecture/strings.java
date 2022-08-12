@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class strings {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
+//Java Strings are Immutable.
+
         // Declaration
         // String name = "Nikhil";
 
@@ -10,7 +12,7 @@ public class strings {
         // String name = s.next();
 
         // concatenation
-        String name = "Nikhil";
+        // String name = "Nikhil";
         // String name2 = "Nikhil";
         // String fullname = name1 + " " + name2;
         // System.out.println(fullname);
@@ -47,7 +49,7 @@ public class strings {
         // }
 
         //substring
-        System.out.println(name.substring(0, 4));
+        // System.out.println(name.substring(0, 4));
 
         //ParseInt Method of Integer class
         // String str = "123";
@@ -55,9 +57,9 @@ public class strings {
         // System.out.println(n);
 
         //toString method of sting class
-        int n = 123;
-        String str = Integer.toString(n);
-        System.out.println(str);
+        // int n = 123;
+        // String str = Integer.toString(n);
+        // System.out.println(str);
             
 
 
