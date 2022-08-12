@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.swing.text.AbstractDocument.LeafElement;
+
 public class strings {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -87,18 +89,61 @@ public class strings {
 
         // System.out.println(result);
 
-        String email = s.next();
-        String userName = "";
+        // String email = s.next();
+        // String userName = "";
 
-        for (int i = 0; i < email.length(); i++) {
-            if (email.charAt(i) == '@') {
-                break;
-            } else {
-                userName += email.charAt(i);
-            }
-        }
+        // for (int i = 0; i < email.length(); i++) {
+        // if (email.charAt(i) == '@') {
+        // break;
+        // } else {
+        // userName += email.charAt(i);
+        // }
+        // }
 
-        System.out.println(userName);
+        // System.out.println(userName);
+
+        // String builder
+
+        // declaration
+        StringBuilder sb = new StringBuilder("nikhil");
+        // System.out.println(sb);
+
+        // get a character from index
+        // System.out.println(sb.charAt(0));
+
+        // set a character at index
+        // sb.setCharAt(0, 'j');
+        // System.out.println(sb);
+
+        // insert character at some index
+        // sb.insert(0, 's');
+        // System.out.println(sb);
+
+        // delete char
+        // sb.delete(0, 1);
+        // System.out.println(sb);
+
+        // append a char
+        // sb.append(" Stark");
+        // System.out.println(sb);
+
+        // System.out.println(sb.length());
+
+        //reverse a string
+        for(int i=0; i<sb.length()/2; i++) {
+            int front = i;
+            int back = sb.length() - i - 1;
+      
+            char frontChar = sb.charAt(front);
+            char backChar = sb.charAt(back);
+      
+            sb.setCharAt(front, backChar);
+            sb.setCharAt(back, frontChar);
+          }
+          System.out.println(sb);
+      
+     
+
 
         s.close();
     }
