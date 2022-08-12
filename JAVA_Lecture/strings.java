@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class strings {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-//Java Strings are Immutable.
+        // Java Strings are Immutable.
 
         // Declaration
         // String name = "Nikhil";
@@ -29,39 +29,76 @@ public class strings {
         // comapare two strings
         // this is the correct method to compare the strings
         // if (name1.equals(name2)) {
-        //     System.out.println("same string");
+        // System.out.println("same string");
         // } else {
-        //     System.out.println("different string");
+        // System.out.println("different string");
         // }
 
         // // do not use fails in some cases
         // if(name1 == name2) {
-        //     System.out.println("They are the same string");
+        // System.out.println("They are the same string");
         // } else {
-        //     System.out.println("They are different strings");
+        // System.out.println("They are different strings");
         // }
-  
+
         // //Gives incorrect answer here
         // if(new String("Tony") == new String("Tony")) {
-        //     System.out.println("They are the same string");
+        // System.out.println("They are the same string");
         // } else {
-        //     System.out.println("They are different strings");
+        // System.out.println("They are different strings");
         // }
 
-        //substring
+        // substring
         // System.out.println(name.substring(0, 4));
 
-        //ParseInt Method of Integer class
+        // ParseInt Method of Integer class
         // String str = "123";
         // int n = Integer.parseInt(str);
         // System.out.println(n);
 
-        //toString method of sting class
+        // toString method of sting class
         // int n = 123;
         // String str = Integer.toString(n);
         // System.out.println(str);
-            
 
+        // finding total length from input text
+
+        // int size = s.nextInt();
+        // String array[] = new String[size];
+        // int totLength = 0;
+
+        // for (int i = 0; i < size; i++) {
+        // array[i] = s.next();
+        // totLength += array[i].length();
+        // }
+
+        // System.out.println(totLength);
+
+        // String str = s.next();
+        // String result = "";
+
+        // for (int i = 0; i < str.length(); i++) {
+        // if (str.charAt(i) == 'e') {
+        // result += 'i';
+        // } else {
+        // result += str.charAt(i);
+        // }
+        // }
+
+        // System.out.println(result);
+
+        String email = s.next();
+        String userName = "";
+
+        for (int i = 0; i < email.length(); i++) {
+            if (email.charAt(i) == '@') {
+                break;
+            } else {
+                userName += email.charAt(i);
+            }
+        }
+
+        System.out.println(userName);
 
         s.close();
     }
