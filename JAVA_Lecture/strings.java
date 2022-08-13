@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import javax.swing.text.AbstractDocument.LeafElement;
 
 public class strings {
     public static void main(String[] args) {
