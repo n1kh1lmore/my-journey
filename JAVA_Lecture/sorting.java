@@ -39,7 +39,26 @@ public class sorting {
         System.out.println("for bubble sort");
         printArray(arr);
 
-        
+        // 2) Selection Sort
+        // Idea: The inner loop selects the minimum element in the unsorted array and
+        // places the elements in increasing order.
+        // Time complexity: O(N2)
+
+        for(int i =0; i<arr.length-1; i++){
+            int smallest = i;
+            for(int j = i+1; j<arr.length; j++){
+                if(arr[j] < arr[smallest]){
+                    smallest = j;
+
+                }
+            }
+            //swap
+            int temp = arr[smallest];
+            arr[smallest] = arr[i];
+            arr[i] = temp;
+        }
+        System.out.println("for selection sort");
+        printArray(arr);
 
 
         s.close();
