@@ -61,15 +61,29 @@ public class recursions {
     // }
 
     // Print x^n (with stack height = logn)
-    public static int printPower(int x, int n) {
-        if (n == 0) {
-            return 1;
+    // public static int printPower(int x, int n) {
+    // if (n == 0) {
+    // return 1;
+    // }
+    // if (n % 2 == 0) {
+    // return printPower(x, n / 2) * printPower(x, n / 2);
+    // } else {
+    // return x * printPower(x, n / 2) * printPower(x, n / 2);
+    // }
+    // }
+
+    // Tower of hanoi
+    public static void towerOfHanoi(int n, String src, String helper, String dest) {
+        if (n == 1) {
+            System.out.println("transfer disk " + n + " from " + src + " to " + dest);
+            return;
         }
-        if (n % 2 == 0) {
-            return printPower(x, n / 2) * printPower(x, n / 2);
-        } else {
-            return x * printPower(x, n / 2) * printPower(x, n / 2);
-        }
+        // transfer top n-1 from src to helper using dest as 'helper'
+        towerOfHanoi(n - 1, src, dest, helper);
+        // transfer nth from src to dest
+        System.out.println("transfer disk " + n + " from " + src + " to " + helper);
+        // transfer n-1 from helper to dest using src as 'helper'
+        towerOfHanoi(n - 1, helper, src, dest);
     }
 
     public static void main(String[] args) {
@@ -96,9 +110,13 @@ public class recursions {
         // System.out.println(output);
 
         // Print x^n (with stack height = logn)
-        int x = 2, n = 5;
-        int output = printPower(x, n);
-        System.out.println(output);
+        // int x = 2, n = 5;
+        // int output = printPower(x, n);
+        // System.out.println(output);
+
+        // Tower og Hanoi
+        int n = 3;
+        towerOfHanoi(n, "S", "H", "D");
 
     }
 }
