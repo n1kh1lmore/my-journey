@@ -73,18 +73,32 @@ public class recursions {
     // }
 
     // Tower of hanoi
-    public static void towerOfHanoi(int n, String src, String helper, String dest) {
-        if (n == 1) {
-            System.out.println("transfer disk " + n + " from " + src + " to " + dest);
-            return;
+    // public static void towerOfHanoi(int n, String src, String helper, String
+    // dest) {
+    // if (n == 1) {
+    // System.out.println("transfer disk " + n + " from " + src + " to " + dest);
+    // return;
+    // }
+    // // transfer top n-1 from src to helper using dest as 'helper'
+    // towerOfHanoi(n - 1, src, dest, helper);
+    // // transfer nth from src to dest
+    // System.out.println("transfer disk " + n + " from " + src + " to " + helper);
+    // // transfer n-1 from helper to dest using src as 'helper'
+    // towerOfHanoi(n - 1, helper, src, dest);
+    // }
+
+
+    //String in reverse
+
+    public static String revString(String str) {
+        if(str.length() == 1) {
+        return str;
         }
-        // transfer top n-1 from src to helper using dest as 'helper'
-        towerOfHanoi(n - 1, src, dest, helper);
-        // transfer nth from src to dest
-        System.out.println("transfer disk " + n + " from " + src + " to " + helper);
-        // transfer n-1 from helper to dest using src as 'helper'
-        towerOfHanoi(n - 1, helper, src, dest);
-    }
+        char currChar = str.charAt(0);
+        String nextString = revString(str.substring(1));
+        return nextString + currChar;
+        }
+
 
     public static void main(String[] args) {
         // print number from 5 to 1
@@ -115,8 +129,13 @@ public class recursions {
         // System.out.println(output);
 
         // Tower og Hanoi
-        int n = 3;
-        towerOfHanoi(n, "S", "H", "D");
+        // int n = 3;
+        // towerOfHanoi(n, "S", "H", "D");
+
+        // String in reverse
+        String str = "abcd";
+        String reversed = revString(str);
+        System.out.println(reversed);
 
     }
 }
