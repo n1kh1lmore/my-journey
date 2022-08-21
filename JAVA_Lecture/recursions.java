@@ -87,18 +87,34 @@ public class recursions {
     // towerOfHanoi(n - 1, helper, src, dest);
     // }
 
+    // String in reverse
 
-    //String in reverse
+    // public static String revString(String str) {
+    // if (str.length() == 1) {
+    // return str;
+    // }
+    // char currChar = str.charAt(0);
+    // String nextString = revString(str.substring(1));
+    // return nextString + currChar;
+    // }
 
-    public static String revString(String str) {
-        if(str.length() == 1) {
-        return str;
+    // first and last occurrence of an element
+    public static int first = -1;
+    public static int last = -1;
+
+    public static void getIndices(String str, char el, int idx) {
+        if (idx == str.length()) {
+            return;
         }
-        char currChar = str.charAt(0);
-        String nextString = revString(str.substring(1));
-        return nextString + currChar;
+        if (str.charAt(idx) == el) {
+            if (first == -1) {
+                first = idx;
+            } else {
+                last = idx;
+            }
         }
-
+        getIndices(str, el, idx + 1);
+    }
 
     public static void main(String[] args) {
         // print number from 5 to 1
@@ -133,9 +149,17 @@ public class recursions {
         // towerOfHanoi(n, "S", "H", "D");
 
         // String in reverse
-        String str = "abcd";
-        String reversed = revString(str);
-        System.out.println(reversed);
+        // String str = "abcd";
+        // String reversed = revString(str);
+        // System.out.println(reversed);
+
+        // first and last occurrence of an element
+
+        String str = "tabcdfghijakkk";
+        char el = 'a';
+        getIndices(str, el, 0);
+        System.out.println("First occurence : " + first);
+        System.out.println("Last occurence : " + last);
 
     }
 }
