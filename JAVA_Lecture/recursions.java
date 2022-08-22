@@ -99,21 +99,33 @@ public class recursions {
     // }
 
     // first and last occurrence of an element
-    public static int first = -1;
-    public static int last = -1;
+    // public static int first = -1;
+    // public static int last = -1;
 
-    public static void getIndices(String str, char el, int idx) {
-        if (idx == str.length()) {
-            return;
+    // public static void getIndices(String str, char el, int idx) {
+    // if (idx == str.length()) {
+    // return;
+    // }
+    // if (str.charAt(idx) == el) {
+    // if (first == -1) {
+    // first = idx;
+    // } else {
+    // last = idx;
+    // }
+    // }
+    // getIndices(str, el, idx + 1);
+    // }
+
+    // sorted array
+    public static boolean checkIfIncreasing(int arr[], int idx) {
+
+        if (idx == arr.length - 1) {
+            return true;
         }
-        if (str.charAt(idx) == el) {
-            if (first == -1) {
-                first = idx;
-            } else {
-                last = idx;
-            }
+        if (!checkIfIncreasing(arr, idx + 1)) {
+            return false;
         }
-        getIndices(str, el, idx + 1);
+        return arr[idx] < arr[idx + 1];
     }
 
     public static void main(String[] args) {
@@ -155,11 +167,20 @@ public class recursions {
 
         // first and last occurrence of an element
 
-        String str = "tabcdfghijakkk";
-        char el = 'a';
-        getIndices(str, el, 0);
-        System.out.println("First occurence : " + first);
-        System.out.println("Last occurence : " + last);
+        // String str = "tabcdfghijakkk";
+        // char el = 'a';
+        // getIndices(str, el, 0);
+        // System.out.println("First occurence : " + first);
+        // System.out.println("Last occurence : " + last);
+
+        // sorted array
+        int arr1[] = { 1, 2, 3, 4, 5 };
+        int arr2[] = { 1, 6, 3, 4, 5 };
+        if (checkIfIncreasing(arr1, 0)) {
+            System.out.println("Strictly Increasing");
+        } else {
+            System.out.println("NOT Strictly Increasing");
+        }
 
     }
 }
