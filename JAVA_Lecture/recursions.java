@@ -130,25 +130,32 @@ public class recursions {
 
     // Move all ‘x’ to the end of the string.
     // to add all 'x' to the end of the string
-    public static String addX(int count) {
-        String newStr = "x";
-        for (int i = 1; i < count; i++) {
-            newStr += 'x';
-        }
-        return newStr;
-    }
+    // public static String addX(int count) {
+    // String newStr = "x";
+    // for (int i = 1; i < count; i++) {
+    // newStr += 'x';
+    // }
+    // return newStr;
+    // }
 
     //
-    public static String moveAllX(String str, int idx, int count) {
-        if (idx == str.length()) {
-            return addX(count);
-        }
-        if (str.charAt(idx) == 'x') {
+    // public static String moveAllX(String str, int idx, int count) {
+    // if (idx == str.length()) {
+    // return addX(count);
+    // }
+    // if (str.charAt(idx) == 'x') {
 
-            return moveAllX(str, idx + 1, count + 1);
-        } else {
-            String nextStr = moveAllX(str, idx + 1, count);
-            return str.charAt(idx) + nextStr;
+    // return moveAllX(str, idx + 1, count + 1);
+    // } else {
+    // String nextStr = moveAllX(str, idx + 1, count);
+    // return str.charAt(idx) + nextStr;
+    // }
+    // }
+
+    // Remove duplicates in a string.
+    public static String removeDuplicates(String str, int idx, boolean present[]) {
+        if (idx == str.length()) {
+            return "";
         }
     }
 
@@ -207,10 +214,14 @@ public class recursions {
         // }
 
         // Move all ‘x’ to the end of the string.
-        String str = "abcdefxghxixjxxxk";
-        int count = 0;
-        String newStr = moveAllX(str, 0, count);
-        System.out.println(newStr);
+        // String str = "abcdefxghxixjxxxk";
+        // int count = 0;
+        // String newStr = moveAllX(str, 0, count);
+        // System.out.println(newStr);
 
+        // Remove duplicates in a string.
+        String str = "abcadbcefghabi";
+        boolean present[] = new boolean[str.length()];
+        System.out.println(removeDuplicates(str, 0, present));
     }
 }
