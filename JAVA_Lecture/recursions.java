@@ -153,18 +153,31 @@ public class recursions {
     // }
 
     // Remove duplicates in a string.
-    public static String removeDuplicates(String str, int idx, boolean present[]) {
-        if(idx == str.length()){
-            return "";
+    // public static String removeDuplicates(String str, int idx, boolean present[])
+    // {
+    // if(idx == str.length()){
+    // return "";
 
+    // }
+    // char curr = str.charAt(idx);
+    // if(present[curr-'a']) {
+    // return removeDuplicates(str, idx+1, present);
+    // } else {
+    // present[curr-'a'] = true;
+    // return curr + removeDuplicates(str, idx+1, present);
+    // }
+    // }
+
+    // Print all subsequences of string
+    public static void printSubseq(String str, int idx, String res) {
+        if (idx == str.length()) {
+            System.out.println(res);
+            return;
         }
-        char curr = str.charAt(idx);
-        if(present[curr-'a']) {
-            return removeDuplicates(str, idx+1, present);
-        } else {
-            present[curr-'a'] = true;
-            return curr + removeDuplicates(str, idx+1, present);
-        }
+        // choose
+        printSubseq(str, idx + 1, res + str.charAt(idx));
+        // don't choose
+        printSubseq(str, idx + 1, res);
     }
 
     public static void main(String[] args) {
@@ -228,8 +241,14 @@ public class recursions {
         // System.out.println(newStr);
 
         // Remove duplicates in a string.
-        String str = "abcadbcefghabi";
-        boolean present[] = new boolean[str.length()];
-        System.out.println(removeDuplicates(str, 0, present));
+        // String str = "abcadbcefghabi";
+        // boolean present[] = new boolean[str.length()];
+        // System.out.println(removeDuplicates(str, 0, present));
+
+        // Print all subsequences of string
+        String str1 = "abc";
+        // String str2 = "aaa";
+        printSubseq(str1, 0, "");
+
     }
 }
