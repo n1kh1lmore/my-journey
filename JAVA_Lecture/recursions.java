@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 public class recursions {
 
     // print numbers from 5 to 1
@@ -169,15 +171,32 @@ public class recursions {
     // }
 
     // Print all subsequences of string
-    public static void printSubseq(String str, int idx, String res) {
+    // public static void printSubseq(String str, int idx, String res) {
+    // if (idx == str.length()) {
+    // System.out.println(res);
+    // return;
+    // }
+    // // choose
+    // printSubseq(str, idx + 1, res + str.charAt(idx));
+    // // don't choose
+    // printSubseq(str, idx + 1, res);
+    // }
+
+    // Print all unique subsequences of a string
+
+    public static void unikSubseq(String str, int idx, String res, HashSet<String> allSubseq) {
         if (idx == str.length()) {
+            if (allSubseq.contains(res)) {
+                return;
+            }
+            allSubseq.add(res);
             System.out.println(res);
             return;
         }
         // choose
-        printSubseq(str, idx + 1, res + str.charAt(idx));
-        // don't choose
-        printSubseq(str, idx + 1, res);
+        unikSubseq(str, idx+1, res+str.charAt(idx), allSubseq);
+        //don't choose
+        unikSubseq(str, idx+1, res, allSubseq);
     }
 
     public static void main(String[] args) {
@@ -246,9 +265,15 @@ public class recursions {
         // System.out.println(removeDuplicates(str, 0, present));
 
         // Print all subsequences of string
-        String str1 = "abc";
-        // String str2 = "aaa";
-        printSubseq(str1, 0, "");
+        // String str1 = "abc";
+        // // String str2 = "aaa";
+        // printSubseq(str1, 0, "");
+
+            //print all unique subsequences
+            String str1 = "abc";
+            String str2 = "aaa";
+            HashSet<String> allSubSet = new HashSet<>();
+            unikSubseq(str2, 0, "", allSubSet);
 
     }
 }
