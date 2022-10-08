@@ -110,19 +110,36 @@ public class recursion2 {
 
     // Print all unique subsequences of a string
 
-    public static void unikSubseq(String str, int idx, String res, HashSet<String> allSubseq) {
-        if (idx == str.length()) {
-            if (allSubseq.contains(res)) {
-                return;
-            }
-            allSubseq.add(res);
+    // public static void unikSubseq(String str, int idx, String res, HashSet<String> allSubseq) {
+    //     if (idx == str.length()) {
+    //         if (allSubseq.contains(res)) {
+    //             return;
+    //         }
+    //         allSubseq.add(res);
+    //         System.out.println(res);
+    //         return;
+    //     }
+    //     // choose
+    //     unikSubseq(str, idx+1, res+str.charAt(idx), allSubseq);
+    //     //don't choose
+    //     unikSubseq(str, idx+1, res, allSubseq);
+    // }
+
+    //print keypad combination
+
+
+    public static String keypad[] = {".", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+
+    public static void keypadComb(String number, int idx, String res) {
+        if(idx == number.length()){
             System.out.println(res);
             return;
         }
-        // choose
-        unikSubseq(str, idx+1, res+str.charAt(idx), allSubseq);
-        //don't choose
-        unikSubseq(str, idx+1, res, allSubseq);
+        for(int i = 0; i<keypad[number.charAt(idx)-'0'].length(); i++){
+            char curr = keypad[number.charAt(idx)-'0'].charAt(i);
+            keypadComb(number, idx+1, res+curr);
+        }
+        
     }
 
     public static void main(String[] args) {
@@ -169,10 +186,15 @@ public class recursion2 {
         // printSubseq(str1, 0, "");
 
             //print all unique subsequences
-            String str1 = "abc";
-            String str2 = "aaa";
-            HashSet<String> allSubSet = new HashSet<>();
-            unikSubseq(str2, 0, "", allSubSet);
+            // String str1 = "abc";
+            // String str2 = "aaa";
+            // HashSet<String> allSubSet = new HashSet<>();
+            // unikSubseq(str2, 0, "", allSubSet);
+
+
+            //print keypad combination
+            String number = "23";
+            keypadComb(number, 0, "");
     }
     
 }
