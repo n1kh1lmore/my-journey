@@ -31,14 +31,24 @@ public class recursion3 {
 
     // tiling problem
 
-    public static int placeTiles(int n, int m) {
-        if(n<m){
-            return 1;
+    // public static int placeTiles(int n, int m) {
+    //     if(n<m){
+    //         return 1;
 
-        }else if(n == m){
-            return 2;
-        }
-        return placeTiles(n-1, m) + placeTiles(n-m, m);      
+    //     }else if(n == m){
+    //         return 2;
+    //     }
+    //     return placeTiles(n-1, m) + placeTiles(n-m, m);      
+    // }
+
+
+    //Friends pairing problem
+    public static int  pairFriends(int n) {
+    if(n <= 1){
+        return 1;
+
+    }   
+    return pairFriends(n-1) + (n-1) * pairFriends(n-2); 
     }
 
     public static void main(String[] args) {
@@ -54,7 +64,13 @@ public class recursion3 {
 
 
         //tiling problem
-        int n = 4, m = 4;
-        System.out.println(placeTiles(n, m));
+        // int n = 4, m = 4;
+        // System.out.println(placeTiles(n, m));
+
+
+
+        //friends pairing problem
+        int n = 3;
+        System.out.println(pairFriends(n));
     }
 }
