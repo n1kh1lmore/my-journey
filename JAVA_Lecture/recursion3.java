@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class recursion3 {
     // Advanced
@@ -27,29 +28,49 @@ public class recursion3 {
     // return coutnPath(i +1, j, m, n) + coutnPath(i, j+1, m, n);
     // }
 
-
-
     // tiling problem
 
     // public static int placeTiles(int n, int m) {
-    //     if(n<m){
-    //         return 1;
+    // if(n<m){
+    // return 1;
 
-    //     }else if(n == m){
-    //         return 2;
-    //     }
-    //     return placeTiles(n-1, m) + placeTiles(n-m, m);      
+    // }else if(n == m){
+    // return 2;
+    // }
+    // return placeTiles(n-1, m) + placeTiles(n-m, m);
+    // }
+
+    // Friends pairing problem
+    // public static int pairFriends(int n) {
+    // if(n <= 1){
+    // return 1;
+
+    // }
+    // return pairFriends(n-1) + (n-1) * pairFriends(n-2);
     // }
 
 
-    //Friends pairing problem
-    public static int  pairFriends(int n) {
-    if(n <= 1){
-        return 1;
-
-    }   
-    return pairFriends(n-1) + (n-1) * pairFriends(n-2); 
+    //subset of set
+    public static void printSubsets(ArrayList<Integer> subset) {
+        for(int i=0; i<subset.size(); i++) {
+            System.out.print(subset.get(i)+" ");
+        }
+        System.out.println();
     }
+  
+    public static void findSubsets(int n, ArrayList<Integer> subset) {
+        if(n == 0) {
+            printSubsets(subset);
+            return;
+        }
+  
+        findSubsets(n-1, subset);
+        subset.add(n);
+        findSubsets(n-1, subset);
+        subset.remove(subset.size() - 1);
+    }
+ 
+
 
     public static void main(String[] args) {
 
@@ -70,7 +91,12 @@ public class recursion3 {
 
 
         //friends pairing problem
-        int n = 3;
-        System.out.println(pairFriends(n));
+    //     int n = 3;
+    //     System.out.println(pairFriends(n));
+
+
+    //subset of a set
+    int n = 3;
+       findSubsets(n, new ArrayList<Integer> ());
     }
 }
